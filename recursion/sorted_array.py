@@ -2,14 +2,14 @@
 
 # p -> array is sorted, sp - >
 
-nums = [1,5,8,13]
+nums = [1,0]
 
-def is_sorted(idx,nums):
+def is_sorted(start,end,nums):
 
-    if len(nums)<=1:
+    if start==end:
         return True
     
     else:
-        return nums[idx] < nums [idx+1] and is_sorted(idx,nums[idx+1:])
+        return nums[start] <= nums [start+1] and is_sorted(start+1,end,nums)
 
-print(is_sorted(0,nums))
+print(is_sorted(0,len(nums)-1,nums))
